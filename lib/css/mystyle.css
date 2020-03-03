@@ -5,6 +5,7 @@ html{
 	margin: 0 auto;
 	width: 80%;
 	height: auto;
+	margin-top: 20px;
 	border: 1px solid #99e6ff;
 	border-radius: 20px;
 	-webkit-box-shadow: 0 10px 6px -6px #777;
@@ -36,9 +37,7 @@ legend.border_fild
 .btn_adcionar{
 
 }
-
 .btn_simular{
-	margin-right: 5%;
 	margin-bottom: 10px;
 }
 h3{
@@ -46,16 +45,13 @@ h3{
 	margin-top:  20px;
 	margin: 30px 0px 80px 0px;
 }
-
 fieldset{
 	margin: 0 auto;
 	width: 90%;
 	border-radius: 10px;
 }
 footer{
-	
-	left: 0;
-   	bottom: 0;
+	left: 0;;
    	width: 100%;
    	background-color: #404040;
    	color: white;
@@ -66,6 +62,25 @@ footer{
 	width: 90px;
 	border-radius: 50%;
 }
+.itensAdicionados{
+	width: 97%;
+	height: auto;
+	max-height: 600px;
+	background: #f7f7f7;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 4%;
+	padding-left: 4%;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	overflow: scroll;
+	overflow-x: hidden;
+	border-radius: 0.5em;
+}
+
+
 @media (max-width: 600px) 
 {
 

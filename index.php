@@ -16,7 +16,7 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript" src="lib/javaScript/script.js"></script>
 </head>
-<body>
+<body onload="scriptBody();">
 	<div class="container">
 		<h3> Consulta de Planos</h3>
 		<fieldset class="border_fild" >
@@ -25,17 +25,17 @@
 				<div class="row">
     				<div class="col">
     					<label>Nome:</label>
-    					<input class="form-control" type="text" placeholder="Nome">
+    					<input class="form-control" id="inputNome" type="text" placeholder="Nome">
     				</div>
     			</div>
   				<div class="row">
     				<div class="col">
     					<label>Idade:</label>
-      					<input type="text" class="form-control" placeholder="Idade">
+      					<input type="text" id="inputIdade" class="form-control" placeholder="Idade">
     				</div>
     				<div class="col">
     					<label>Plano:</label>
-      					<select class="form-control Select_planos" placeholder="Plano"> 
+      					<select class="form-control Select_planos"  id="inputPlano" placeholder="Plano"> 
       						<option value="">Selecione um Plano</option>
       						<?php 
       						foreach ($planos as $plano) {
@@ -46,15 +46,14 @@
     				</div>
   				</div>
   				<br>
-  				<center><button type="button" class="btn btn-primary">Adicionar</button></center>
+  				<center><button type="button" id="btnAdicionarCliente" class="btn btn-primary">Adicionar</button></center>
 			</form>
 		</fieldset>
-		<fieldset class="border_fild" >
-			<legend class="bordear"> Clientes selecionados:</legend>
-			
-		</fieldset>
-		<center><button type="button" class="btn btn-success	btn_simular">Simular</button></center>
-
+		<div class="row">
+        	<div class="itensAdicionados">
+            </div>       
+        </div>
+		<center><button type="button" class="btn btn-success btn_simular">Simular</button></center>
 	</div>
 </body>
 <footer>
