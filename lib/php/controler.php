@@ -1,5 +1,5 @@
 <?php
-
+	
 	require("converter_json.php");
 
 	$condicaoSwitch = $_POST["condicao"];	
@@ -11,7 +11,7 @@
 			$plano = $_POST["plano"];
 			$classControler = new classControler;
 			$divCriada = $classControler->criarPHPCliente($nome,$idade,$plano);
-			die(json_encode("string")) ;
+			die(json_encode($divCriada)) ;
 		break;  
 		case 'PuchLogar':
 		break;  
@@ -33,6 +33,9 @@
 			}elseif($idade < 40){
 
 			}
+			$div = "";
+
+			return $div;
 
 		}
 	}

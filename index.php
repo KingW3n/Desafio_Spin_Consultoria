@@ -51,6 +51,16 @@
 		</fieldset>
 		<div class="row">
         	<div class="itensAdicionados">
+        		<table id="tableCliente">
+        			<tr>
+        				<td>Nome</td>
+        				<td>Idade</td>
+        				<td>Plano</td>
+        				<td>Valor Unitario</td>
+        				<td><td>
+        				<td></td>
+        			</tr>
+        		</table>
             </div>       
         </div>
 		<center><button type="button" class="btn btn-success btn_simular">Simular</button></center>
