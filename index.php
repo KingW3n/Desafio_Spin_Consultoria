@@ -68,6 +68,7 @@
   <div id="orcamento">
     <center><a class="btn btn-primary btn-lg active" role="button" id="btnVoltar" aria-pressed="true">Voltar e Editar</a>
     <a href="index.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Novo Orçamento</a></center>
+    <div id="folha"></div>
 
   </div>
 	<div id="LOADINGSAVE">

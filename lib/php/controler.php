@@ -14,9 +14,12 @@
 			die(json_encode($valor)) ;
 		break;  
 		case 'calcular':
+			$aNomes = explode(',', $_POST['nomes']);
+		 	$aIdades = explode(',', $_POST['idades']);
+		 	$aPlanos = explode(',', $_POST['planos']);
 			$classControler = new classControler;
-			$classControler->calcular_gerarPdf();
-			die(json_encode("oi"));
+			$valor = $classControler->gerarOrçamento($aNomes,$aIdades,$aPlanos);
+			die(json_encode($valor));
 		break; 
 		
 	}
@@ -43,11 +46,59 @@
 
 		}
 
-		public function calcular_gerarPdf()
+		public function gerarOrçamento($aNomes,$aIdades,$aPlanos)
 		{	
+			$consulta = new consulta;
+			$retornoplano = $consulta->consultaPlano();
+			$retornopreco = $consulta->consultaPreco();
+			$aTiposdePlanos = array_unique($aPlanos, SORT_REGULAR);
+			$aCodigoPlano = array();
+			$aQuantidadeplanos = array();
+			$aQuantidadeplanos = array();
 			
+			//Identifica quantos planos de cada possui 
+			foreach ($aTiposdePlanos as $value) {
+				$i = 0;
+				foreach ($aPlanos as $v) {
+					if($v == $value){
+						$i++;
+					}
+				}
+				array_push($aQuantidadeplanos, $i);
+			}
+			//Identifica o codigo dos planos escoçhidos
+			foreach ($aTiposdePlanos as $value) {
+				foreach ($retornoplano as $v) {
+					if($v['nome'] == $value){
+					 	array_push($aCodigoPlano, $v['codigo']);
+					}
+				}
+			}
+			
+
+			print_r($aQuantidadeplanos);
+			print_r($aCodigoPlano);
+
+			foreach ($aCodigoPlano as $valor) {
+				
+			}
+
+			$html=	'<table>
+						<tr>
+							<th>Nº</th>
+							<th>Nome do Contratante</th>
+							<th>Idade</th>
+							<th>Nome do Plano</th>
+							<th>Valor</th>
+						</tr>';
+
+
+			$html=$html.'</table>';
+
+
+
     
-			
+		return $html;	
 
 		}
 	}

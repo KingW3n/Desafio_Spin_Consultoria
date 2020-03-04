@@ -5,7 +5,11 @@ class consulta
 	
 	 public function consultaPlano(){
 		$aDadosPlano = array();
-		$arquivo = file_get_contents("lib/json/planos.json");
+		if ( is_file ( 'lib/json/planos.json' )){
+			$arquivo = file_get_contents("lib/json/planos.json");
+		}elseif ( is_file ( '../json/planos.json' )){
+			$arquivo = file_get_contents("../json/planos.json");
+		}
 		$json = json_decode($arquivo);
 		foreach ($json as $key => $valor) {
 			$aDadosPlano[] = array("registro" => $valor->registro,"codigo" => $valor->codigo,"nome" => $valor->nome);
