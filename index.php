@@ -49,16 +49,15 @@
   				<center><button type="button" id="btnAdicionarCliente" class="btn btn-primary">Adicionar</button></center>
 			</form>
 		</fieldset>
-		<div class="row">
+		<div class="row">	
         	<div class="itensAdicionados">
         		<table id="tableCliente">
         			<tr>
-        				<td>Nome</td>
-        				<td>Idade</td>
-        				<td>Plano</td>
-        				<td>Valor Unitario</td>
-        				<td><td>
-        				<td></td>
+        				<th>Nome</th>
+        				<th>Idade</th>
+        				<th>Plano</th>
+        				<th>Valor Unitario</th>
+        				<th></th>
         			</tr>
         		</table>
             </div>       

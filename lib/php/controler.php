@@ -10,32 +10,31 @@
 			$idade = $_POST["idade"];
 			$plano = $_POST["plano"];
 			$classControler = new classControler;
-			$divCriada = $classControler->criarPHPCliente($nome,$idade,$plano);
-			die(json_encode($divCriada)) ;
+			$valor = $classControler->RetornarvalorUnitario($idade,$plano);
+			die(json_encode($valor)) ;
 		break;  
-		case 'PuchLogar':
-		break;  
-		case 'PuchUnidade':
-		break;  
-		case 'PuchUSerEditSE':
-		break; 
+		
 	}
 
 	class classControler
 	{
-		public function criarPHPCliente($nome, $idade,$plano)
+		public function RetornarvalorUnitario($idade,$plano)
 		{	
 			$consulta = new consulta;
-			if($idade >= 17){
-
-			}elseif($idade < 17 and $idade >= 40){
-
-			}elseif($idade < 40){
-
+			foreach ($consulta->consultaPreco() as  $valor) {
+				if($plano == $valor['codigo'] and $valor['minimo_vidas'] == 1){
+					if($idade <= 17){
+						$preco =$valor['faixa1'] ;
+					}elseif($idade >=18 && $idade<=40){
+						$preco =$valor['faixa2'] ;
+					}elseif($idade >40){
+						$preco =$valor['faixa3'] ;
+					}else{
+						$preco = "erro";
+					}
+				}
 			}
-			$div = "";
-
-			return $div;
+			return $preco;
 
 		}
 	}
