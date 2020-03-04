@@ -1,6 +1,6 @@
 <?php
-	
 	require("converter_json.php");
+
 
 	$condicaoSwitch = $_POST["condicao"];	
 
@@ -13,6 +13,11 @@
 			$valor = $classControler->RetornarvalorUnitario($idade,$plano);
 			die(json_encode($valor)) ;
 		break;  
+		case 'calcular':
+			$classControler = new classControler;
+			$classControler->calcular_gerarPdf();
+			die(json_encode("oi"));
+		break; 
 		
 	}
 
@@ -35,6 +40,14 @@
 				}
 			}
 			return $preco;
+
+		}
+
+		public function calcular_gerarPdf()
+		{	
+			
+    
+			
 
 		}
 	}
