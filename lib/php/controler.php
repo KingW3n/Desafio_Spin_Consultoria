@@ -175,9 +175,11 @@
 									$valorFormatado = 'R$' . number_format($v['faixa1'], 2, ',', '.');
 									$html = $html."<td>". $valorFormatado."</td></tr>";
 								}elseif($aIdades[$i] >=18 && $aIdades[$i]<=40){
+									$sum = $sum + $v['faixa2'] ;
 									$valorFormatado = 'R$' . number_format($v['faixa2'], 2, ',', '.');
 									$html = $html."<td>". $valorFormatado."</td></tr>";
 								}elseif($aIdades[$i] >40){
+									$sum = $sum + $v['faixa3'] ;
 									$valorFormatado = 'R$' . number_format($v['faixa3'], 2, ',', '.');
 									$html = $html."<td>". $valorFormatado."</td></tr>";
 								}
