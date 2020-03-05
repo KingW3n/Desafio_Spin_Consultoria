@@ -54,8 +54,7 @@
 			$aTiposdePlanos = array_unique($aPlanos, SORT_REGULAR);
 			$aCodigoPlano = array();
 			$aQuantidadeplanos = array();
-			$aQuantidadeplanos = array();
-			
+			$aValoresPlanoEscolhido = array();
 			//Identifica quantos planos de cada possui 
 			foreach ($aTiposdePlanos as $value) {
 				$i = 0;
@@ -66,21 +65,21 @@
 				}
 				array_push($aQuantidadeplanos, $i);
 			}
-			//Identifica o codigo dos planos escoçhidos
+			//Identifica o codigo dos planos escolhidos
 			foreach ($aTiposdePlanos as $value) {
 				foreach ($retornoplano as $v) {
 					if($v['nome'] == $value){
-					 	array_push($aCodigoPlano, $v['codigo']);
+					 	$aCodigoPlano[] =array("codigo" =>$v['codigo'],"nome"=>$value);
 					}
 				}
 			}
-			
-
-			print_r($aQuantidadeplanos);
-			print_r($aCodigoPlano);
-
+			//
 			foreach ($aCodigoPlano as $valor) {
-				
+				foreach ($retornopreco as $v) {
+					if($valor['codigo'] == $v['codigo']){
+						$aValoresPlanoEscolhido[] = array("codigo"=>$v['codigo'], "minimo_vidas"=>$v['minimo_vidas'], "faixa1"=>$v['faixa1'], "faixa2"=>$v['faixa2'], "faixa3"=>$v['faixa3']);
+					}
+				}
 			}
 
 			$html=	'<table>
@@ -92,8 +91,25 @@
 							<th>Valor</th>
 						</tr>';
 
-
-			$html=$html.'</table>';
+			//
+			$aValoresPlanoEscolhido_des = array_multisort($aValoresPlanoEscolhido, SORT_DESC);
+			function searchForId($id, $array) {
+   foreach ($array as $key => $val) {
+       if ($val['minimo_vidas'] === $id) {
+           return $key;
+       }
+   }
+   return null;
+}
+echo $id = searchForId('6', $aValoresPlanoEscolhido_des);
+			$contador = count($aCodigoPlano);
+			for ($i=0; $i < $contador; $i++) { 
+				foreach ($variable as $key => $value) {
+					
+				}
+			}
+			print_r();
+			
 
 
 
