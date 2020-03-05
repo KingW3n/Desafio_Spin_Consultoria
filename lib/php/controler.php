@@ -11,6 +11,7 @@
 			$plano = $_POST["plano"];
 			$classControler = new classControler;
 			$valor = $classControler->RetornarvalorUnitario($idade,$plano);
+			$valor = 'R$' . number_format($valor, 2, ',', '.');
 			die(json_encode($valor)) ;
 		break;  
 		case 'calcular':
@@ -87,17 +88,11 @@
     		
 			$avalorPlanoVerificado = $this->retornarValorPlanos($aCodigoPlano, $retornopreco,$aQuantidadeplanos);
 			$retornoTd = $this->retornraTd($aCodigoPlano,$aNomes,$aIdades,$aPlanos,$avalorPlanoVerificado);
-			$html = $html.$retornoTd[0]['html']."</table>
-			<br><br>
-			<table>
-				<tr>
-					<td>Total:</td>
-					<td>".$retornoTd[0]['sum']."</td>
-				</tr>
-			</table>";
-
-    
-			return $html;	
+			$html = $html.$retornoTd[0]['html']."</table>";
+			// repare que o padrão é no formato americano
+			$sum = 'R$' . number_format($retornoTd[0]['sum'], 2, ',', '.');
+			$aRetorno[] = array("html"=>$html, "sum"=>$sum);
+			return $aRetorno;	
 
 		}
 
@@ -177,13 +172,14 @@
         										
 								if($aIdades[$i] <= 17){
 									$sum = $sum + $v['faixa1'] ;
-									$html = $html."<td> R$: ". $v['faixa1']."</td></tr>";
+									$valorFormatado = 'R$' . number_format($v['faixa1'], 2, ',', '.');
+									$html = $html."<td>". $valorFormatado."</td></tr>";
 								}elseif($aIdades[$i] >=18 && $aIdades[$i]<=40){
-									$sum = $sum + $v['faixa2'] ;
-									$html = $html."<td> R$: ". $v['faixa2']."</td></tr>";
+									$valorFormatado = 'R$' . number_format($v['faixa2'], 2, ',', '.');
+									$html = $html."<td>". $valorFormatado."</td></tr>";
 								}elseif($aIdades[$i] >40){
-									$sum = $sum + $v['faixa3'] ;
-									$html = $html."<td> R$: ". $v['faixa3']."</td></tr>";
+									$valorFormatado = 'R$' . number_format($v['faixa3'], 2, ',', '.');
+									$html = $html."<td>". $valorFormatado."</td></tr>";
 								}
 							}
 						}

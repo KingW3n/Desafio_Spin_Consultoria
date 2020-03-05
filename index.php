@@ -24,26 +24,26 @@
 			<legend class="bordear">Adicionar Cliente:</legend>
 			<form>
 				<div class="row">
-    				<div class="col">
-    					<label>Nome:</label>
-    					<input class="form-control" id="inputNome" type="text" placeholder="Nome">
-    				</div>
+    			<div class="col">
+    				<label>Nome:</label>
+    				<input class="form-control" id="inputNome" type="text" placeholder="Nome">
     			</div>
-  				<div class="row">
-    				<div class="col">
-    					<label>Idade:</label>
-      					<input type="text" id="inputIdade" class="form-control" placeholder="Idade"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-    				</div>
-    				<div class="col">
-    					<label>Plano:</label>
-      					<select class="form-control Select_planos"  id="inputPlano" placeholder="Plano"> 
-      						<option value="">Selecione um Plano</option>
-      						<?php 
-      						foreach ($planos as $plano) {
-      							?><option value="<?php echo $plano['codigo']?>"><?php echo $plano['nome']?></option><?php
-      						}
-      						?>
-      					</select>
+  			</div>
+  			<div class="row">
+    			<div class="col">
+    				<label>Idade:</label>
+    				<input type="text" id="inputIdade" class="form-control" placeholder="Idade"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+  				</div>
+    			<div class="col">
+    				<label>Plano:</label>
+      				<select class="form-control Select_planos"  id="inputPlano" placeholder="Plano"> 
+    						<option value="">Selecione um Plano</option>
+    						<?php 
+    						foreach ($planos as $plano) {
+                  ?><option value="<?php echo $plano['codigo']?>"><?php echo $plano['nome']?></option><?php
+      					}
+      					?>
+      				</select>
     				</div>
   				</div>
   				<br>
@@ -69,7 +69,15 @@
     <center><a class="btn btn-primary btn-lg active" role="button" id="btnVoltar" aria-pressed="true">Voltar e Editar</a>
     <a href="index.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Novo Orçamento</a></center>
     <div id="folha"></div>
-
+    <div id="valorTotal">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col   CampValorTotal">
+          <label class="lb_campTotal">Total:</label>
+        </div>
+      </div>
+    </div>
   </div>
 	<div id="LOADINGSAVE">
 		<img src="src/load.gif" width="100%">

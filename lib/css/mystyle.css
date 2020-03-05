@@ -59,14 +59,20 @@ legend.border_fild
 	background-color: #D3D3D3;
 	position: absolute;
 }
-#folha
-{
-	width: 595px;
-	height: 842px;
-	background-color: #fff;
+#folha{
 	margin: 0 auto;
+	width: 595px;
+	min-height: 802px;
 	margin-top: 30px;
+	background-color: #fff;
+}
+#valorTotal{
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 559px;
+	height: 40px;
 	margin-bottom: 100px;
+	font-weight: bold;
 }
 .active
 {
@@ -135,10 +141,11 @@ footer
   	margin-left: -125px; /* e retrocede metade da largura */
 	background-color: rgba(255,255,255,0.8);
 }
-#tb_Total{
-	text-align: right;
-	
+.tb_Total{
+	font-weight: bold;
+    font-size: 19px;
 }
+
 table
 {
   border-collapse: collapse;
@@ -157,4 +164,8 @@ th
 {
  	background-color: #4682B4;
  	color: white;
+}
+.CampValorTotal{
+	border: 1px solid black;
+    border-radius: 0.5em;
 }
