@@ -81,7 +81,7 @@
 					}
 				}
 			}
-
+			
 			$html=	'<table>
 						<tr>
 							<th>Nº</th>
@@ -93,15 +93,6 @@
 
 			//
 			$aValoresPlanoEscolhido_des = array_multisort($aValoresPlanoEscolhido, SORT_DESC);
-			function searchForId($id, $array) {
-   foreach ($array as $key => $val) {
-       if ($val['minimo_vidas'] === $id) {
-           return $key;
-       }
-   }
-   return null;
-}
-echo $id = searchForId('6', $aValoresPlanoEscolhido_des);
 			$contador = count($aCodigoPlano);
 			for ($i=0; $i < $contador; $i++) { 
 				foreach ($variable as $key => $value) {
