@@ -75,7 +75,7 @@
 			//
 			
 
-			$html=	'<table>
+			$html=	'<table >
 						<tr>
 							<th>Nº</th>
 							<th>Nome do Contratante</th>
@@ -87,7 +87,14 @@
     		
 			$avalorPlanoVerificado = $this->retornarValorPlanos($aCodigoPlano, $retornopreco,$aQuantidadeplanos);
 			$retornoTd = $this->retornraTd($aCodigoPlano,$aNomes,$aIdades,$aPlanos,$avalorPlanoVerificado);
-			$html = $html.$retornoTd[0]['html']."</table><table><tr><td>Total:</td><td>".$retornoTd[0]['sum']."</td></tr></table>";
+			$html = $html.$retornoTd[0]['html']."</table>
+			<br><br>
+			<table>
+				<tr>
+					<td>Total:</td>
+					<td>".$retornoTd[0]['sum']."</td>
+				</tr>
+			</table>";
 
     
 			return $html;	

@@ -32,7 +32,7 @@
   				<div class="row">
     				<div class="col">
     					<label>Idade:</label>
-      					<input type="text" id="inputIdade" class="form-control" placeholder="Idade">
+      					<input type="text" id="inputIdade" class="form-control" placeholder="Idade"  onkeypress="return event.charCode >= 48 && event.charCode <= 57">
     				</div>
     				<div class="col">
     					<label>Plano:</label>

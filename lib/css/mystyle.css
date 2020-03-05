@@ -116,6 +116,7 @@ footer
 	overflow: scroll;
 	overflow-x: hidden;
 	border-radius: 0.5em;
+	display: none;
 }
 #ImagemLixeira
 {
@@ -133,6 +134,10 @@ footer
   	left: 50%; /* posiciona na metade da tela */
   	margin-left: -125px; /* e retrocede metade da largura */
 	background-color: rgba(255,255,255,0.8);
+}
+#tb_Total{
+	text-align: right;
+	
 }
 table
 {
