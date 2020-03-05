@@ -81,7 +81,7 @@
 					}
 				}
 			}
-			
+
 			$html=	'<table>
 						<tr>
 							<th>Nº</th>
@@ -93,9 +93,10 @@
 
 			//
 			$aValoresPlanoEscolhido_des = array_multisort($aValoresPlanoEscolhido, SORT_DESC);
+			echo array_count_values(array_column($aValoresPlanoEscolhido_des, 'codigo'))['6'];
 			$contador = count($aCodigoPlano);
 			for ($i=0; $i < $contador; $i++) { 
-				foreach ($variable as $key => $value) {
+				foreach ($aValoresPlanoEscolhido_des as $value) {
 					
 				}
 			}
